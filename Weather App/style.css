@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  outline: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  transition: 0.5s ease-in-out;
+  background-color: #222;
+  background-image: url(/img/Night.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #00000080;
+}
+
+.card {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 32px;
+  border-radius: 8px;
+  width: 400px;
+  border: 0.5rem solid #000000;
+  z-index: 5;
+  position: relative;
+  transition: 0.5s ease-in-out;
+}
+
+/*.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  backdrop-filter: blur(2px);
+  background-color: #ffffff10;
+  box-shadow: inset 4px 4px 50px #ffca0010;
+  z-index: -5;
+}*/
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #000000ab;
+  z-index: -4;
+}
+
+.search {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  height: 26px;
+  background-color: #ddd;
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
+
+/*-- ADD RIPPLE FX --*/
+button {
+  height: 26px;
+  width: 104px;
+  padding: 0;
+  border-radius: 4px;
+  background-color: #ffca0080;
+  border: none;
+  transition: all 0.15s ease-in;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #000000bf;
+  color: #ddd;
+}
+
+button:focus,
+button:active {
+  outline: none;
+}
+
+.city {
+  margin-top: 24px;
+}
+
+.type {
+  display: flex;
+  text-transform: capitalize;
+}
+
+.temp {
+  font-size: 1.8rem;
+}
+
+.weather.loading {
+  display: none;
+}
+
+.type,
+.humidity,
+.wind {
+  font-size: 1.15rem;
+}
