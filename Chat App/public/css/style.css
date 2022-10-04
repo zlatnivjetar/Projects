@@ -96,6 +96,12 @@ a {
   margin-bottom: 15px;
   background-color: var(--light-color);
   border-radius: 5px;
+  position: relative;
+}
+
+.chat-messages .message.emotes::after {
+  content: "emotes";
+  position: absolute;
 }
 
 .chat-messages .message .meta {

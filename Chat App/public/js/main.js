@@ -3,6 +3,7 @@ const chatMessages = document.querySelector('.chat-messages')
 const roomName = document.getElementById('room-name')
 const userList = document.getElementById('users')
 
+
 //Get username and room from URL
 const { username, room } = Qs.parse(location.search, {
   ignoreQueryPrefix: true
@@ -23,7 +24,6 @@ socket.on('roomUsers', ({ room, users }) => {
 socket.on('message', message => {
   console.log(message)
   outputMessage(message)
-
   chatMessages.scrollTop = chatMessages.scrollHeight
 })
 
@@ -49,6 +49,7 @@ function outputMessage(message) {
   <p class="text">${message.text}
   </p>`
   document.querySelector('.chat-messages').appendChild(div)
+
 }
 
 function outputRoomName(room) {
